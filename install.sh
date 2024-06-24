@@ -25,3 +25,5 @@ _linkSSHConfig $HOME $DOTFILES_DIR
 _setDefaultZsh
 
 _configureZsh $HOME $DOTFILES_DIR
+
+_copyWallpapers

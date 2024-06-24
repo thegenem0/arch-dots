@@ -24,3 +24,9 @@ _sym() {
         echo ":: New symlink ${linksource} -> ${linktarget} created."
     fi
 }
+
+_copyWallpapers() {
+	mkdir -p "$HOME/wallpapers"
+
+	cp -r "$HOME/.dotfiles/wallpapers/*" "$HOME/wallpapers"
+}
