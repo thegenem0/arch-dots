@@ -15,10 +15,12 @@ _installDots() {
 	_sym "${xdg_config_dir}/fastfetch" "${dotfiles_dir}/fastfetch" "${xdg_config_dir}/fastfetch"
 	_sym "${xdg_config_dir}/starship.toml" "${dotfiles_dir}/starship/starship.toml" "${xdg_config_dir}/starship.toml"
 
+
 	_sym "${xdg_config_dir}/gtk-3.0" "${dotfiles_dir}/gtk/gtk-3.0" "${xdg_config_dir}/gtk-3.0"
 	_sym "${xdg_config_dir}/xsettingsd" "${dotfiles_dir}/gtk/xsettingsd" "${xdg_config_dir}/xsettingsd"
 	_sym "${xdg_home_dir}/.gtkrc-2.0" "${dotfiles_dir}/gtk/.gtkrc-2.0" "${xdg_home_dir}/.gtkrc-2.0"
 	_sym "${xdg_home_dir}/.icons" "${dotfiles_dir}/gtk/.icons" "${xdg_home_dir}/.icons"
+	_sym "${xdg_home_dir}/.ideavimrc" "${dotfiles_dir}/idea/ideavimrc" "${xdg_home_dir}/.ideavimrc"
 }
 
 _installHyprDots() {
