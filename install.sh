@@ -8,6 +8,7 @@ source .lib/link.sh
 source .lib/git.sh
 source .lib/ssh.sh
 source .lib/shell.sh
+source .lib/nvim.sh
 source sddm/install_sddm.sh
 
 _installDots $HOME $XDG_CONFIG_DIR $DOTFILES_DIR
@@ -25,5 +26,9 @@ _linkSSHConfig $HOME $DOTFILES_DIR
 _setDefaultZsh
 
 _configureZsh $HOME $DOTFILES_DIR
+
+_installNvimDeps
+
+_configureNvim $XDG_CONFIG_DIR $DOTFILES_DIR
 
 _copyWallpapers

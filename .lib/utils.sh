@@ -26,7 +26,5 @@ _sym() {
 }
 
 _copyWallpapers() {
-	mkdir -p "$HOME/wallpapers"
-
-	cp -r "$HOME/.dotfiles/wallpapers/*" "$HOME/wallpapers"
+	cp -r "$HOME/.dotfiles/wallpapers" "$HOME"
 }

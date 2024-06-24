@@ -1,21 +1,23 @@
-[includeIf "gitdir:~/dev/personal/"]
-	path = ~/dev/personal/.gitconfig.personal
+# Default configuration
+[include]
+    path = ~/dev/personal/.gitconfig.personal
 
+# Work-specific configuration overrides
 [includeIf "gitdir:~/dev/work/"]
-	path = ~/dev/work/.gitconfig.work
+    path = ~/dev/work/.gitconfig.work
 
 [gpg]
-	format = ssh
+    format = ssh
 
 [commit]
-	gpgsign = true
+    gpgsign = true
 
 [tag]
-	gpgsign = true
+    gpgsign = true
 
 [format]
-	signoff = true
+    signoff = true
 
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 
