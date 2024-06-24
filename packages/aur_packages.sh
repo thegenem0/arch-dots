@@ -15,4 +15,6 @@ aurPackages=(
     trizen
     wallust-git
     wlogout
+    discord_arch_electron
+    betterdiscord-installer
 )

@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 [line_break]
-disabled = false
+disabled = true
 
 [username]
 style_user = "green bold"
