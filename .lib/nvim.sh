@@ -1,9 +1,5 @@
 #!/bin/bash
 
-_installNvimDeps() {
-	sudo pacman -Sy --noconfirm neovim
-}
-
 _configureNvim() {
 	xdg_config_dir="$1";
 	dotfiles_dir="$2";	

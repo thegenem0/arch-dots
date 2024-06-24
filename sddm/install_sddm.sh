@@ -1,7 +1,6 @@
 #!/bin/bash
 
 _installSddm() {
-	paru -S --noconfirm sddm --ask 4
 	sudo systemctl enable sddm.service
 }
 
@@ -34,7 +33,7 @@ _installSddmTheme() {
 		    sudo cp -r ~/Downloads/sddm-sugar-candy-master/* /usr/share/sddm/themes/sugar-candy
 		    echo ":: SDDM Sugar Candy Theme installed"
 		else
-		    echo "ERROR: Sugar Candy Download not found"
+		    echo ":: ERROR: Sugar Candy Download not found"
 		fi
 	fi    
 

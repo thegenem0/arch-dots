@@ -57,11 +57,9 @@ _pacmanInstall() {
     
     # Iterate over each argument, which is expected to be the name of a package array
     for category in "$@"; do
-
         eval "packages=(\"\${${category}[@]}\")"
-        echo "PACKAGES: ${packages[@]}"
         
-        echo "Installing packages in category: ${category}"
+        echo ":: Installing packages in category: ${category}"
         for pkg in "${packages[@]}"; do
             if [[ $(_checkPacman "${pkg}") == 0 ]]; then
                 echo ":: ${pkg} is already installed."
@@ -72,7 +70,7 @@ _pacmanInstall() {
     done
 
     if [[ "${#toInstall[@]}" -eq 0 ]] ; then
-        echo "All packages are already installed."
+        echo ":: All packages are already installed."
         return
     fi
 
@@ -84,11 +82,9 @@ _aurInstall() {
     
     # Iterate over each argument, which is expected to be the name of a package array
     for category in "$@"; do
-
         eval "packages=(\"\${${category}[@]}\")"
-        echo "PACKAGES: ${packages[@]}"
         
-        echo "Installing packages in category: ${category}"
+        echo ":: Installing packages in category: ${category}"
         for pkg in "${packages[@]}"; do
             if [[ $(_checkAur "${pkg}") == 0 ]]; then
                 echo ":: ${pkg} is already installed."
@@ -99,7 +95,7 @@ _aurInstall() {
     done
 
     if [[ "${#toInstall[@]}" -eq 0 ]] ; then
-        echo "All packages are already installed."
+        echo ":: All packages are already installed."
         return
     fi
 

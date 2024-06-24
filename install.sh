@@ -34,8 +34,6 @@ _setDefaultZsh
 
 _configureZsh $HOME $DOTFILES_DIR
 
-_installNvimDeps
-
 _configureNvim $XDG_CONFIG_DIR $DOTFILES_DIR
 
 _copyWallpapers

@@ -118,4 +118,5 @@ cliTools=(
     atuin
     btop
     cliphist
+    aws-vault
 )
