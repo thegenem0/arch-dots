@@ -11,6 +11,13 @@ source .lib/shell.sh
 source .lib/nvim.sh
 source sddm/install_sddm.sh
 
+source packages/pacman_packages.sh
+source packages/aur_packages.sh
+
+_pacmanInstall wmPackages fonts systemPackages langs cliTools
+
+_aurInstall aurPackages
+
 _installDots $HOME $XDG_CONFIG_DIR $DOTFILES_DIR
 
 _installHyprDots $HOME $XDG_CONFIG_DIR $DOTFILES_DIR
