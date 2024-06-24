@@ -1,0 +1,139 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[line_break]
+disabled = false
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+disabled = false
+show_always = false
+
+[character]
+success_symbol = "[ ](bold green)"
+error_symbol = "[ ](bold red)"
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = " "
+behind = " "
+diverged = " "
+renamed = "r"
+deleted = " "
+
+[nix_shell]
+disabled = false
+impure_msg = '[impure shell](bold red)'
+pure_msg = '[pure shell](bold green)'
+unknown_msg = '[unknown shell](bold yellow)'
+format = 'via [❄️ $state( \($name\))](bold blue) '
+
+[aws]
+format = '(on [$symbol$profile]($style)) '
+style = 'bold yellow'
+symbol = "  "
+[aws.profile_aliases]
+Enterprise_Naming_Scheme-voidstars = 'void**'
+
+[gcloud]
+format = '(on [$symbol$account]($style)) '
+style = 'bold blue'
+symbol = "󱇶 "
+
+[c]
+symbol = " "
+format = '(via [$symbol($version(-$name) )]($style))'
+detect_files = ["*.c", "*.h"]
+
+[cmake]
+symbol = "🔧 "
+format = '(via [$symbol($version )]($style))'
+detect_files = ["CMakeLists.txt", "*.cmake"]
+
+[dotnet]
+symbol = "󰪮 "
+format = '(via [$symbol($version )]($style))'
+detect_files = ["*.csproj", "*.sln"]
+
+[directory]
+read_only = " ro"
+read_only_style = "bold red"
+style = "bold blue"
+format = "[  ](bold blue) [$path]($style)[$read_only]($read_only_style) "
+
+[docker_context]
+symbol = " "
+format = "(via [$symbol$context]($style))"
+style = "blue bold"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
+disabled = false
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+format = '(via [$symbol($version )]($style))'
+detect_files = ["*.go"]
+
+[java]
+symbol = " "
+format = '(via [$symbol]($style))'
+detect_files = ["*.java", "pom.xml"]
+
+[kotlin]
+symbol = " "
+format = 'via [$symbol]($style)'
+detect_files = ["*.kt", "*.kts"]
+
+[gradle]
+symbol = " "
+format = '(via [$symbol]($style))'
+detect_files = ["build.gradle", "settings.gradle"]
+
+[lua]
+symbol = " "
+format = '(via [$symbol($version )]($style))'
+detect_files = ["*.lua"]
+
+[nodejs]
+format = "(via [ Node.js ($version)](bold green))"
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+
+[memory_usage]
+symbol = "  "
+
+[os.symbols]
+Arch = "󰣇 "
+
+[package]
+symbol = "pkg "
+
+[python]
+symbol = " "
+format = "via [$symbol($version)]($style)"
+detect_files = ["*.py", "requirements.txt", "Pipfile"]
+
+[rust]
+symbol = " "
+format = '(via [$symbol($version )]($style))'
+detect_files = ["Cargo.toml"]
+
+[sudo]
+symbol = "sudo "
+
+[terraform]
+symbol = "󱁢 "
+format = '(via [$symbol($version )]($style))'
+detect_files = ["*.tf"]
+
+[zig]
+symbol = " "
+format = '(via [$symbol($version )]($style))'
+detect_files = ["*.zig"]

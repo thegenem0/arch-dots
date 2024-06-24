@@ -1,153 +1,333 @@
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
 * {
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font";
-    font-weight: bold;
-    font-size: 16px;
-    min-height: 0;
+    border-radius: 0px;
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+    background-color: rgba(50, 50, 50, 0.5); /* Semi-transparent grey background */
+    border-bottom: 0px solid #ffffff;
+    background: rgba(50, 50, 50, 0.5);
+    transition-property: background-color;
+    border-radius: 30px;
+    transition-duration: .5s;
 }
 
-tooltip {
-    background: #1e1e2e;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #11111b;
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
+
+#workspaces {
+    background: transparent;
+    margin: 2px 1px 3px 1px;
+    padding: 0px 1px;
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    font-size: 16px;
+    color: @color15;
 }
 
 #workspaces button {
-    padding: 5px;
-    color: #313244;
-    margin-right: 5px;
+    padding: 0px 5px;
+    border: 3px solid @color15;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: @color12;
+    background-color: @color15;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
 }
 
 #workspaces button.active {
-    color: #a6adc8;
-}
-
-#workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
-    border-radius: 10px;
-}
-
-#workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-    border-radius: 10px;
+    color: @color12;
+    background: @color15;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
 }
 
 #workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
+    color: @color15;
+    background: @color15;
+    border-radius: 15px;
+    opacity:0.7;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
     border-radius: 10px;
+    background-color: transparent;
+    opacity:0.8;
+    padding:20px;
+    margin:0px;
 }
 
-#custom-power_profile,
-#custom-weather,
-#window,
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#bluetooth,
-#temperature,
-#workspaces,
-#tray,
-#backlight {
-    background: #1e1e2e;
-    opacity: 0.8;
-    padding: 0px 10px;
-    margin: 3px 0px;
-    margin-top: 10px;
-    border: 1px solid #181825;
+tooltip label {
+    color: @color15;
 }
 
-#temperature {
-    border-radius: 10px 0px 0px 10px;
-}
-
-#temperature.critical {
-    color: #eba0ac;
-}
-
-#backlight {
-    border-radius: 10px 0px 0px 10px;
-}
-
-#tray {
-    border-radius: 10px;
-    margin-right: 10px;
-}
-
-#workspaces {
-    background: #1e1e2e;
-    border-radius: 10px;
-    margin-left: 10px;
-    padding-right: 0px;
-    padding-left: 5px;
-}
-
-#custom-power_profile {
-    color: #a6e3a1;
-    border-left: 0px;
-    border-right: 0px;
-}
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
 
 #window {
-    border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+    background: @color15;
+    margin: 5px 15px 5px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 12px;
+    color:@color15;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
 }
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    background: @color15;
+    margin: 3px 15px 3px 0px;
+    padding:0px;
+    border-radius: 15px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+    border: 3px solid @color15;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Custom Quicklinks
+ * ----------------------------------------------------- */
+
+#custom-browser, 
+#custom-cliphist {
+    margin-right: 23px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: @color15;
+}
+
+/* -----------------------------------------------------
+ * Custom Exit
+ * ----------------------------------------------------- */
+
+#custom-exit {
+    margin: 0px 20px 0px 0px;
+    padding:0px;
+    font-size:20px;
+    color: @color15;
+}
+
+/* -----------------------------------------------------
+ * Custom Updates
+ * ----------------------------------------------------- */
+
+#custom-updates {
+    background-color: transparent;
+    border: 3px solid @color15;
+    font-size: 16px;
+    color: @color15;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.8;
+}
+
+#custom-updates.green {
+    background-color: transparent;
+}
+
+#custom-updates.yellow {
+    background-color: #ff9a3c;
+    color: #FFFFFF;
+}
+
+#custom-updates.red {
+    background-color: #dc2f2f;
+    color: #FFFFFF;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+#custom-system,#disk,#memory,#cpu,#language {
+    margin:0px;
+    padding:0px;
+    font-size:16px;
+    color:@color15;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
 
 #clock {
-    color: #fab387;
-    border-radius: 10px 0px 0px 10px;
-    margin-left: 10px;
-    border-right: 0px;
+    background-color: transparent;
+    font-size: 16px;
+    color: @color15;
+    border-radius: 15px;
+    padding: 1px 10px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity:0.8;
+    border:3px solid @color15;   
 }
 
-#network {
-    color: #f9e2af;
-    border-radius: 10px 0px 0px 10px;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#bluetooth {
-    color: #89b4fa;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px
-} 
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
 
 #pulseaudio {
-    color: #89b4fa;
-    border-left: 0px;
-    border-right: 0px;
+    background-color: transparent;
+    border: 3px solid @color15;
+    font-size: 16px;
+    color: @color15;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.8;
 }
 
-#pulseaudio.microphone {
-    color: #cba6f7;
-    border-left: 0px;
-    border-right: 0px;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px;
+#pulseaudio.muted {
+    background-color: @color15;
+    border: 3px solid @color15;
+    color: @color15;
 }
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
+#network {
+    background-color: transparent;
+    border: 3px solid @color15;
+    font-size: 16px;
+    color: @color15;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.8;
+}
+
+#network.ethernet {
+    background-color: transparent;
+    border: 3px solid @color15;
+    color: @color15;
+}
+
+#network.wifi {
+    background-color: transparent;
+    border: 3px solid @color15;
+    color: @color15;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+#bluetooth, #bluetooth.on, #bluetooth.connected {
+    background-color: transparent;
+    border: 3px solid @color15;
+    font-size: 16px;
+    color: @color15;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.8;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
 
 #battery {
-    color: #a6e3a1;
-    border-radius: 0 10px 10px 0;
-    margin-right: 10px;
-    border-left: 0px;
+    background-color: transparent;
+    border: 3px solid @color15;
+    font-size: 16px;
+    color: @color15;
+    border-radius: 15px;
+    padding: 2px 15px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.8;
 }
 
-#custom-weather {
-    border-radius: 0px 10px 10px 0px;
-    border-right: 0px;
-    margin-left: 0px;
+#battery.charging, #battery.plugged {
+    color: @color15;
+    border: 3px solid @color15;
+    background-color: transparent;
 }
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+        color: @color15;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    border: 3px solid @color15;
+    color: @color15;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    padding: 0px 15px 0px 0px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+

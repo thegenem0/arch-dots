@@ -1,0 +1,25 @@
+[global]
+    frame_color = "{{color9}}"
+    background = "{{background}}"
+    foreground = "{{foreground}}"
+    geometry = "300x5-10+38"
+    separator_height = 2
+
+[urgency_low]
+    timeout = 2
+    frame_color = "{{color9}}"
+    background = "{{background}}"
+    foreground = "{{foreground}}"
+
+[urgency_normal]
+    timeout = 5
+    frame_color = "{{color9}}"
+    background = "{{background}}"
+    foreground = "{{foreground}}"
+
+[urgency_critical]
+    timeout = 0
+    background = "#990000"
+    foreground = "{{foreground}}"
+    frame_color = "{{color9}}"
+
