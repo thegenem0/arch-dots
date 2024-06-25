@@ -24,4 +24,5 @@ background-color: {{background}};
 background: rgba(0,0,0,0.7);
 foreground: {{color15}};
 border-color: {{color9}};
+text-color: {{color11}};
 }

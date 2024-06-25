@@ -105,6 +105,7 @@ cliTools=(
     vim
     zoxide
     zsh
+    bc
     lazygit
     neovim
     grim
