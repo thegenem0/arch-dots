@@ -11,9 +11,10 @@
 }
 
 window#waybar {
-    background-color: rgba(50, 50, 50, 0.5); /* Semi-transparent grey background */
+    background-color: rgba(50, 50, 50, 0.5);
+    /* Semi-transparent grey background */
     border-bottom: 0px solid #ffffff;
-    background: rgba(50, 50, 50, 0.5);
+    background: rgba(50, 50, 50, 0.8);
     transition-property: background-color;
     border-radius: 30px;
     transition-duration: .5s;
@@ -54,14 +55,14 @@ window#waybar {
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
-    opacity:1.0;
+    opacity: 1.0;
 }
 
 #workspaces button:hover {
     color: @color15;
     background: @color15;
     border-radius: 15px;
-    opacity:0.7;
+    opacity: 0.7;
 }
 
 /* -----------------------------------------------------
@@ -71,9 +72,9 @@ window#waybar {
 tooltip {
     border-radius: 10px;
     background-color: transparent;
-    opacity:0.8;
-    padding:20px;
-    margin:0px;
+    opacity: 0.8;
+    padding: 20px;
+    margin: 0px;
 }
 
 tooltip label {
@@ -89,14 +90,14 @@ tooltip label {
     margin: 5px 15px 5px 0px;
     padding: 2px 10px 0px 10px;
     border-radius: 12px;
-    color:@color15;
-    font-size:16px;
-    font-weight:normal;
-    opacity:0.8;
+    color: @color15;
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.8;
 }
 
 window#waybar.empty #window {
-    background-color:transparent;
+    background-color: transparent;
 }
 
 /* -----------------------------------------------------
@@ -106,16 +107,16 @@ window#waybar.empty #window {
 #taskbar {
     background: @color15;
     margin: 3px 15px 3px 0px;
-    padding:0px;
+    padding: 0px;
     border-radius: 15px;
     font-weight: normal;
     font-style: normal;
-    opacity:0.8;
-    border: 3px solid @color15;
+    opacity: 0.8;
+    border: 3px solid @color12;
 }
 
 #taskbar button {
-    margin:0;
+    margin: 0;
     border-radius: 15px;
     padding: 0px 5px 0px 5px;
 }
@@ -124,11 +125,11 @@ window#waybar.empty #window {
  * Modules
  * ----------------------------------------------------- */
 
-.modules-left > widget:first-child > #workspaces {
+.modules-left>widget:first-child>#workspaces {
     margin-left: 0;
 }
 
-.modules-right > widget:last-child > #workspaces {
+.modules-right>widget:last-child>#workspaces {
     margin-right: 0;
 }
 
@@ -136,7 +137,7 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-browser, 
+#custom-browser,
 #custom-cliphist {
     margin-right: 23px;
     font-size: 20px;
@@ -151,9 +152,9 @@ window#waybar.empty #window {
 
 #custom-exit {
     margin: 0px 20px 0px 0px;
-    padding:0px;
-    font-size:20px;
-    color: @color15;
+    padding: 0px;
+    font-size: 20px;
+    color: @color12;
 }
 
 /* -----------------------------------------------------
@@ -162,13 +163,13 @@ window#waybar.empty #window {
 
 #custom-updates {
     background-color: transparent;
-    border: 3px solid @color15;
+    border: 3px solid @color12;
     font-size: 16px;
     color: @color15;
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity:0.8;
+    opacity: 0.8;
 }
 
 #custom-updates.green {
@@ -185,15 +186,23 @@ window#waybar.empty #window {
     color: #FFFFFF;
 }
 
+#custom-waymedia {
+    color: @color12;
+}
+
 /* -----------------------------------------------------
  * Hardware Group
  * ----------------------------------------------------- */
 
-#custom-system,#disk,#memory,#cpu,#language {
-    margin:0px;
-    padding:0px;
-    font-size:16px;
-    color:@color15;
+#custom-system,
+#disk,
+#memory,
+#cpu,
+#language {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    color: @color15;
 }
 
 /* -----------------------------------------------------
@@ -207,8 +216,8 @@ window#waybar.empty #window {
     border-radius: 15px;
     padding: 1px 10px 0px 10px;
     margin: 3px 15px 3px 0px;
-    opacity:0.8;
-    border:3px solid @color15;   
+    opacity: 0.8;
+    border: 3px solid @color12;
 }
 
 /* -----------------------------------------------------
@@ -217,18 +226,18 @@ window#waybar.empty #window {
 
 #pulseaudio {
     background-color: transparent;
-    border: 3px solid @color15;
+    border: 3px solid @color12;
     font-size: 16px;
     color: @color15;
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity:0.8;
+    opacity: 0.8;
 }
 
 #pulseaudio.muted {
-    background-color: @color15;
-    border: 3px solid @color15;
+    background-color: @color12;
+    border: 3px solid @color12;
     color: @color15;
 }
 
@@ -238,24 +247,24 @@ window#waybar.empty #window {
 
 #network {
     background-color: transparent;
-    border: 3px solid @color15;
+    border: 3px solid @color12;
     font-size: 16px;
     color: @color15;
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity:0.8;
+    opacity: 0.8;
 }
 
 #network.ethernet {
     background-color: transparent;
-    border: 3px solid @color15;
+    border: 3px solid @color12;
     color: @color15;
 }
 
 #network.wifi {
     background-color: transparent;
-    border: 3px solid @color15;
+    border: 3px solid @color12;
     color: @color15;
 }
 
@@ -263,15 +272,17 @@ window#waybar.empty #window {
  * Bluetooth
  * ----------------------------------------------------- */
 
-#bluetooth, #bluetooth.on, #bluetooth.connected {
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected {
     background-color: transparent;
-    border: 3px solid @color15;
+    border: 3px solid @color12;
     font-size: 16px;
     color: @color15;
     border-radius: 15px;
     padding: 2px 10px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity:0.8;
+    opacity: 0.8;
 }
 
 #bluetooth.off {
@@ -286,18 +297,19 @@ window#waybar.empty #window {
 
 #battery {
     background-color: transparent;
-    border: 3px solid @color15;
+    border: 3px solid @color12;
     font-size: 16px;
     color: @color15;
     border-radius: 15px;
     padding: 2px 15px 0px 10px;
     margin: 5px 15px 5px 0px;
-    opacity:0.8;
+    opacity: 0.8;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     color: @color15;
-    border: 3px solid @color15;
+    border: 3px solid @color12;
     background-color: transparent;
 }
 
@@ -310,7 +322,7 @@ window#waybar.empty #window {
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    border: 3px solid @color15;
+    border: 3px solid @color12;
     color: @color15;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -327,7 +339,6 @@ window#waybar.empty #window {
     padding: 0px 15px 0px 0px;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
-
