@@ -1,16 +1,15 @@
 {
-    "hyprland/workspaces" : {
+    "hyprland/workspaces": {
         "on-click": "activate",
         "active-only": false,
         "all-outputs": false,
         "format": "{}",
         "format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
+            "urgent": "",
+            "active": "",
+            "default": ""
         }
     },
-
     "hyprland/window": {
         "rewrite": {
             "(.*) - Brave": "$1",
@@ -21,11 +20,22 @@
         },
         "separate-outputs": true
     },
-
     "custom/empty": {
         "format": " "
     },
-
+    "custom/waymedia": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/waymedia/waymedia",
+        "interval": 1,
+        "limit": 60,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "play-icon": " ",
+        "pause-icon": " ",
+        "divider": " - ",
+        "pattern": "{}-{artist}{divider}{title}"
+    },
     "custom/cliphist": {
         "format": "",
         "on-click": "sleep 0.1 && ~/.config/waybar/scripts/cliphist.sh",
@@ -33,75 +43,64 @@
         "on-click-middle": "sleep 0.1 && ~/.config/waybar/scripts/cliphist.sh w",
         "tooltip-format": "Clipboard Manager"
     },
-
     "custom/updates": {
         "format": "   {}",
         "escape": true,
-        "return-type": "json",       
+        "return-type": "json",
         "exec": "~/.config/waybar/scripts/updates.sh",
         "restart-interval": 60
     },
-    
     "custom/exit": {
         "format": "",
         "on-click": "wlogout",
         "tooltip-format": "Power Menu"
     },
-
     "tray": {
         "icon-size": 21,
         "spacing": 10
     },
-
     "clock": {
         "format": "{:%H:%M %a}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
-
     "custom/system": {
         "format": "",
         "tooltip": false
     },
-
     "cpu": {
         "format": "/  {usage}% ",
         "on-click": "kitty -e btop"
     },
-
     "memory": {
         "format": "/  {}% ",
         "on-click": "kitty -e btop"
     },
-
     "disk": {
         "interval": 30,
         "format": "󰋊 {percentage_used}% ",
         "path": "/",
         "on-click": "kitty -e btop"
-    }, 
-
+    },
     "hyprland/language": {
         "format": "/  {short}"
     },
-
     "group/hardware": {
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 300,
             "children-class": "not-memory",
             "transition-left-to-right": false
-        },        
+        },
         "modules": [
             "custom/system",
             "disk",
             "cpu",
             "memory",
             "hyprland/language",
-	    "custom/empty"
+            "custom/empty"
         ]
     },
-    
     "network": {
         "format": "{ifname}",
         "format-wifi": " {signalStrength}%",
@@ -114,7 +113,6 @@
         "max-length": 50,
         "on-click": "kitty --class dotfiles-floating -e nmtui",
     },
-
     "battery": {
         "states": {
             // "good": 95,
@@ -127,9 +125,14 @@
         "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ]
     },
-
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
@@ -145,11 +148,14 @@
             "phone": " ",
             "portable": " ",
             "car": " ",
-            "default": [" ", " ", " "]
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
         },
         "on-click": "pavucontrol"
     },
-
     "bluetooth": {
         "format": " {status}",
         "format-disabled": "",
@@ -158,11 +164,9 @@
         "on-click": "blueman-manager",
         "format-no-controller": ""
     },
-
     "user": {
         "format": "{user}",
         "interval": 60,
         "icon": false
     }
 }
-

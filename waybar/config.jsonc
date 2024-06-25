@@ -1,38 +1,35 @@
 {
-    "layer": "top",
     "margin-top": 14,
     "margin-bottom": 0,
     "layer": "top",
     "margin-left": 10,
-    "margin-right": 10,    
+    "margin-right": 10,
     "spacing": 0,
-
     // Load Modules
-    "include": ["~/.config/waybar/modules.json"],
-
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
     // Modules Left
     "modules-left": [
-	"custom/empty",
+        "custom/empty",
         "hyprland/workspaces"
     ],
-
     // Modules Center
     "modules-center": [
-        "clock"
+        "custom/waymedia"
     ],
-
     // Modules Right    
     "modules-right": [
         "custom/updates",
         "pulseaudio",
         "bluetooth",
-        "battery", 
+        "battery",
         "network",
         "group/hardware",
-	"custom/empty",
+        "custom/empty",
         "custom/cliphist",
         "tray",
+        "clock",
         "custom/exit"
     ]
 }
-
