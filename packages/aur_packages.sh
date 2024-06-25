@@ -17,4 +17,5 @@ aurPackages=(
     wlogout
     discord_arch_electron
     betterdiscord-installer
+    aws-cli-v2
 )

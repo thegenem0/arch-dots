@@ -86,6 +86,8 @@ systemPackages=(
     firefox
     kitty
     nwg-look
+    gnome-keyring
+    libsecret
 )
 
 langs=(
@@ -119,4 +121,5 @@ cliTools=(
     btop
     cliphist
     aws-vault
+    docker
 )
