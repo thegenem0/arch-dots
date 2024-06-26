@@ -4,6 +4,7 @@ XDG_CONFIG_DIR=$HOME/.config
 DOTFILES_DIR=$HOME/.dotfiles
 
 source .lib/utils.sh
+source .lib/paru.sh
 source .lib/link.sh
 source .lib/git.sh
 source .lib/ssh.sh
@@ -14,6 +15,8 @@ source sddm/install_sddm.sh
 
 source packages/pacman_packages.sh
 source packages/aur_packages.sh
+
+_installParu
 
 _pacmanInstall wmPackages fonts systemPackages langs cliTools
 
