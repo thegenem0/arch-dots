@@ -52,6 +52,9 @@ alias tf="terraform"
 alias cli-nosession="aws-vault exec hace-cli --no-session --"
 alias main-nosession="aws-vault exec hace-main --no-session --"
 
+alias awslocal="aws --endpoint-url=http://localhost:4566"
+alias awsstack="aws --endpoint-url=https://192.168.1.20:4566"
+
 alias parquet="~/.libs/parquet/parquet.sh"
 
 bindkey "^[[1;5C" forward-word
