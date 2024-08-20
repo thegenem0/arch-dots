@@ -13,6 +13,7 @@ _installDots() {
 	_sym "${xdg_config_dir}/waybar" "${dotfiles_dir}/waybar" "${xdg_config_dir}/waybar"
 	_sym "${xdg_config_dir}/wlogout" "${dotfiles_dir}/wlogout" "${xdg_config_dir}/wlogout"
 	_sym "${xdg_config_dir}/fastfetch" "${dotfiles_dir}/fastfetch" "${xdg_config_dir}/fastfetch"
+	_sym "${xdg_config_dir}/tmux" "${dotfiles_dir}/tmux" "${xdg_config_dir}/tmux"
 	_sym "${xdg_config_dir}/starship.toml" "${dotfiles_dir}/starship/starship.toml" "${xdg_config_dir}/starship.toml"
 
 

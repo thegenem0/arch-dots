@@ -1,4 +1,7 @@
-fastfetch
+fpath+=~/.zsh/completions
+
+autoload -Uz compinit
+compinit
 
 ##############################################################################
 # History Configuration
@@ -13,7 +16,7 @@ setopt    incappendhistory  #Immediately append to the history file, not just wh
 
 
 ## ANTIGEN
-source ~/.scripts/antigen.zsh
+source ~/.config/scripts/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -25,7 +28,6 @@ antigen bundle encode64
 antigen bundle colorize
 antigen bundle github
 antigen bundle bundler
-antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle Aloxaf/fzf-tab
 antigen bundle atuinsh/atuin@main
@@ -37,6 +39,9 @@ antigen bundle qoomon/zsh-lazyload
 
 antigen apply
 
+### GLOBAL SETTINGS ###
+export EDITOR="nvim"
+export PATH="$PATH:$HOME/.config/scripts"
 
 # aliases
 alias gl="lazygit"
@@ -52,21 +57,22 @@ alias tf="terraform"
 alias cli-nosession="aws-vault exec hace-cli --no-session --"
 alias main-nosession="aws-vault exec hace-main --no-session --"
 
-alias awslocal="aws --endpoint-url=http://localhost:4566"
-alias awsstack="aws --endpoint-url=https://192.168.1.20:4566"
+alias awslocal="AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test AWS_DEFAULT_REGION=eu-west-2 aws --endpoint-url=http://${LOCALSTACK_HOST:-localhost}:4566"
 
 alias parquet="~/.libs/parquet/parquet.sh"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey -s '^f' "tmux-sessionizer.sh\n"
 
-export EDITOR="nvim"
-
-### PATHS ###
 
 eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+   eval "$(pyenv init -)"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -76,3 +82,8 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}

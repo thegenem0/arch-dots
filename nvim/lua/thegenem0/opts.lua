@@ -53,3 +53,9 @@ vim.opt.iskeyword:append("-") -- consider string-string as whole word
 
 vim.g.sonokai_style = 'andromeda'
 vim.g.sonokai_better_performance = 1
+
+vim.filetype.add({
+    extension = {
+        ['http'] = 'http',
+    },
+})

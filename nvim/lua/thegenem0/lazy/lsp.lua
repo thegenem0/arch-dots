@@ -33,6 +33,8 @@ return {
             ensure_installed = {
                 "gopls",
                 "lua_ls",
+                "tsserver",
+                "eslint",
             },
             handlers = {
                 function(server_name)
@@ -53,6 +55,25 @@ return {
                                 }
                             },
                         }
+                    }
+                end,
+
+                ["eslint"] = function()
+                    local lspconfig = require("lspconfig")
+                    local util = require("lspconfig.util")
+
+                    lspconfig.eslint.setup {
+                        capabilities = capabilities,
+                        root_dir = util.root_pattern(".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", "package.json", "tsconfig.json"),
+                        settings = {
+                            workingDirectory = { mode = "auto" },
+                        },
+                        on_attach = function(_, bufnr)
+                            vim.api.nvim_create_autocmd("BufWritePre", {
+                                buffer = bufnr,
+                                command = "EslintFixAll",
+                            })
+                        end,
                     }
                 end,
             },

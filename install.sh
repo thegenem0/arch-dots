@@ -12,6 +12,7 @@ source .lib/shell.sh
 source .lib/nvim.sh
 source .lib/nix.sh
 source .lib/docker.sh
+source .lib/tmux.sh
 source sddm/install_sddm.sh
 
 source packages/pacman_packages.sh
@@ -42,6 +43,8 @@ _setDefaultZsh
 _configureZsh $HOME $DOTFILES_DIR
 
 _configureNvim $XDG_CONFIG_DIR $DOTFILES_DIR
+
+_setupTmuxTpm
 
 _copyWallpapers
 

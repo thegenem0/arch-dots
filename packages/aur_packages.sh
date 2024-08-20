@@ -18,4 +18,5 @@ aurPackages=(
     discord_arch_electron
     betterdiscord-installer
     aws-cli-v2
+    topgrade
 )

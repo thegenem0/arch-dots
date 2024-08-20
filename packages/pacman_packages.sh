@@ -123,4 +123,5 @@ cliTools=(
     cliphist
     aws-vault
     docker
+    tmux
 )

@@ -1,0 +1,17 @@
+hypr/monitors.conf
+hypr/workspaces.conf
+
+# Ignore all wallust directories recursively
+**/wallust/
+
+# But do not ignore the top-level wallust directory
+!/wallust/
+.idea
+nvim/.idea
+nvim/.idea
+tmux/plugins
+waybar/wallust/colors-waybar.css
+wlogout/wallust/colors-wlogout.css
+rofi/wallust/colors-rofi.rasi
+hypr/wallust/colors-hyprland.conf
+dunst/dunstrc.d/00-colors.conf
