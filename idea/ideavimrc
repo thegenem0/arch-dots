@@ -8,6 +8,7 @@ set NERDTree
 set surround
 set ReplaceWithRegister
 set commentary
+set number relativenumber
 """----------------
 
 set showmode

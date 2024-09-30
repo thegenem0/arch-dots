@@ -26,15 +26,16 @@ deleted = " "
 
 [nix_shell]
 disabled = false
-impure_msg = '[impure shell](bold red)'
-pure_msg = '[pure shell](bold green)'
+symbol = ""
+impure_msg = '[impure](bold red)'
+pure_msg = '[pure](bold green)'
 unknown_msg = '[unknown shell](bold yellow)'
-format = 'via [❄️ $state( \($name\))](bold blue) '
+format = 'via [$symbol nix](bold blue) '
 
 [aws]
 format = '(on [$symbol$profile]($style)) '
 style = 'bold yellow'
-symbol = "  "
+symbol = " "
 [aws.profile_aliases]
 Enterprise_Naming_Scheme-voidstars = 'void**'
 
@@ -91,6 +92,11 @@ symbol = " "
 format = 'via [$symbol]($style)'
 detect_files = ["*.kt", "*.kts"]
 
+[scala]
+symbol = " "
+format = '(via [$symbol]($style))'
+detect_files = ["*.scala"]
+
 [gradle]
 symbol = " "
 format = '(via [$symbol]($style))'
@@ -102,7 +108,7 @@ format = '(via [$symbol($version )]($style))'
 detect_files = ["*.lua"]
 
 [nodejs]
-format = "(via [ Node.js ($version)](bold green))"
+format = "(via [ Node.js ($version )](bold green))"
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
 
@@ -117,8 +123,12 @@ symbol = "pkg "
 
 [python]
 symbol = " "
-format = "via [$symbol($version)]($style)"
+format = "via [$symbol($version )]($style)"
 detect_files = ["*.py", "requirements.txt", "Pipfile"]
+
+[conda]
+symbol = " "
+format = '[$symbol$environment](dimmed green) '
 
 [rust]
 symbol = " "

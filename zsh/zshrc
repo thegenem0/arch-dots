@@ -48,6 +48,7 @@ alias gl="lazygit"
 alias gowork="cd ~/dev/work/"
 alias gome="cd ~/dev/personal"
 alias vim="nvim"
+alias nixdev="nix develop"
 
 alias ls='exa --icons --long --git -h --group-directories-first'
 alias cd='z'
@@ -59,7 +60,7 @@ alias main-nosession="aws-vault exec hace-main --no-session --"
 
 alias awslocal="AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test AWS_DEFAULT_REGION=eu-west-2 aws --endpoint-url=http://${LOCALSTACK_HOST:-localhost}:4566"
 
-alias parquet="~/.libs/parquet/parquet.sh"
+alias parquet="~/.scripts/parquet.sh"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -87,3 +88,19 @@ timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/thegenem0/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/thegenem0/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/thegenem0/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/thegenem0/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
